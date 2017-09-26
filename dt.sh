@@ -1,7 +1,7 @@
 #!/bin/bash
 current=$(df /run | grep "/run" | awk '{ print $5 }')
 threshold=7
-if [ "$current" >= "$threshold" ];
+if [ "$current" -ge "$threshold" ];
 then
 echo "send a mail used: $current"
 mail -s 'disk space alert' siva.pamula@sap.com << EOF
